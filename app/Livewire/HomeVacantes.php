@@ -31,7 +31,7 @@ class HomeVacantes extends Component
         ->when($this->termino, function($query) {
             $query->orWhere('empresa', 'LIKE', "%" . $this->termino . "%");
         })
-        ->when($this->categoria, function($query) {
+        ->when($this->categoria, function($query) {'titulo', 'LIKE', "%" . $this->termino . "%"
             $query->where('categoria_id', $this->categoria);
         })
         ->when($this->salario, function($query) {
